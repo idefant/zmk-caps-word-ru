@@ -1,0 +1,2 @@
+zephyr_library()
+zephyr_library_sources_ifdef(CONFIG_ZMK_BEHAVIOR_CAPS_WORD_RU src/behaviors/behavior_caps_word_ru.c)

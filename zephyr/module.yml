@@ -1,0 +1,6 @@
+name: zmk-caps-word-ru
+build:
+  cmake: .
+  kconfig: Kconfig
+  settings:
+    dts_root: .

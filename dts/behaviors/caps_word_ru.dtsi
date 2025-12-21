@@ -1,0 +1,10 @@
+/ {
+  behaviors {
+    caps_word_ru: caps_word_ru {
+      compatible = "zmk,behavior-caps-word-ru";
+      #binding-cells = <0>;
+      mods = <(MOD_LSFT)>;
+      continue-list = <UNDERSCORE BACKSPACE DELETE>;
+    };
+  };
+};

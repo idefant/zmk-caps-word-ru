@@ -1,0 +1,24 @@
+# Copyright (c) 2025
+# SPDX-License-Identifier: MIT
+
+description: Caps Word RU behavior
+
+compatible: "zmk,behavior-caps-word-ru"
+
+include: zero_param.yaml
+
+properties:
+  continue-list:
+    type: array
+    required: false
+    default: [UNDERSCORE, BACKSPACE, DELETE]
+    description: >
+      List of keycodes which do not deactivate caps word.
+      NOTE: continue-list is treated as if it always includes alphanumeric
+      characters (A-Z, 0-9) and (for this behavior) RU-alpha extras.
+
+  mods:
+    type: int
+    required: false
+    default: [MOD_LSFT]
+    description: Bit field of modifiers to apply to “alphabetic” keys.
