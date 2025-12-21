@@ -4,8 +4,6 @@ Custom **Caps Word** behavior for **ZMK v0.3.x** that works better with Russian 
 
 This module provides `&caps_word_ru` — a drop-in alternative to ZMK’s built-in `&caps_word`, implemented as an **out-of-tree ZMK/Zephyr module** (no ZMK fork required).
 
----
-
 ## Why?
 
 ZMK’s built-in `&caps_word` is great, but it has two practical limitations for RU users:
@@ -16,8 +14,6 @@ ZMK’s built-in `&caps_word` is great, but it has two practical limitations for
    - With Caps Word active, pressing `Ctrl+Z` may become `Ctrl+Shift+Z` (undo → redo).
 
 `caps_word_ru` solves both.
-
----
 
 ## Differences vs `&caps_word`
 
@@ -43,16 +39,12 @@ This includes:
 ### ✅ No ZMK fork
 This is an **out-of-tree module** you add via `west.yml`.
 
----
-
 ## Compatibility
 
 - Designed for **ZMK v0.3.0** and expected to work across **v0.3.x**.
 - Tested as a behavior module compiled into `app` target.
 
 If you use a significantly newer ZMK version, API changes may require small updates.
-
----
 
 ## Installation
 
@@ -131,16 +123,12 @@ You can override the defaults in your keymap:
 };
 ```
 
----
-
 ## Defaults
 
 The default instance from `dts/behaviors/caps_word_ru.dtsi` uses:
 
 * `mods = MOD_LSFT`
 * `continue-list = UNDERSCORE BACKSPACE DELETE`
-
----
 
 ## How it works (high level)
 
@@ -151,8 +139,6 @@ The default instance from `dts/behaviors/caps_word_ru.dtsi` uses:
   2. Cancels itself if a modifier key is pressed (except Shift)
   3. Adds `Shift` to “alphabetic” keys (A–Z plus `[ ] ; ' , .`)
   4. Deactivates on keys not considered “continuations”
-
----
 
 ## Troubleshooting
 
@@ -175,13 +161,9 @@ ZMK v0.3.x uses long HID names like:
 
 If you see “undeclared” errors, check the exact symbol names in your ZMK version.
 
----
-
 ## License
 
 MIT (same spirit as ZMK). See `LICENSE` if present in your fork/repo.
-
----
 
 ## Credits
 
