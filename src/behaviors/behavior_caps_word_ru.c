@@ -115,12 +115,12 @@ static bool caps_word_ru_is_alpha(uint8_t usage_id) {
     }
 
     switch (usage_id) {
-    case HID_USAGE_KEY_KEYBOARD_LEFT_BRACKET:  /* [  -> Х */
-    case HID_USAGE_KEY_KEYBOARD_RIGHT_BRACKET: /* ]  -> Ъ */
-    case HID_USAGE_KEY_KEYBOARD_SEMICOLON:     /* ;  -> Ж */
-    case HID_USAGE_KEY_KEYBOARD_APOSTROPHE:    /* '  -> Э */
-    case HID_USAGE_KEY_KEYBOARD_COMMA:         /* ,  -> Б */
-    case HID_USAGE_KEY_KEYBOARD_PERIOD:        /* .  -> Ю */
+    case HID_USAGE_KEY_KEYBOARD_LEFT_BRACKET_AND_LEFT_BRACE:        /* [ -> Х */
+    case HID_USAGE_KEY_KEYBOARD_RIGHT_BRACKET_AND_RIGHT_BRACE:      /* ] -> Ъ */
+    case HID_USAGE_KEY_KEYBOARD_SEMICOLON_AND_COLON:                /* ; -> Ж */
+    case HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE:               /* ' -> Э */
+    case HID_USAGE_KEY_KEYBOARD_COMMA_AND_LESS_THAN:                /* , -> Б */
+    case HID_USAGE_KEY_KEYBOARD_PERIOD_AND_GREATER_THAN:            /* . -> Ю */
         return true;
     default:
         return false;
@@ -137,9 +137,8 @@ static bool caps_word_ru_is_shift_key(const struct zmk_keycode_state_changed *ev
         return false;
     }
 
-    return (ev->keycode == HID_USAGE_KEY_KEYBOARD_LEFT_SHIFT ||
-            ev->keycode == HID_USAGE_KEY_KEYBOARD_RIGHT_SHIFT);
-}
+    return (ev->keycode == HID_USAGE_KEY_KEYBOARD_LEFTSHIFT ||
+            ev->keycode == HID_USAGE_KEY_KEYBOARD_RIGHTSHIFT);}
 
 /* Only shift is allowed while caps_word_ru is active.
  * If ctrl/alt/gui are involved (explicitly held OR implicitly applied),
