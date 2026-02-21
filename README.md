@@ -59,8 +59,8 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: my
-      url-base: https://github.com/<YOUR_GITHUB_USERNAME>
+    - name: idefant
+      url-base: https://github.com/idefant
 
   projects:
     - name: zmk
@@ -69,14 +69,12 @@ manifest:
       import: app/west.yml
 
     - name: zmk-caps-word-ru
-      remote: my
+      remote: idefant
       revision: main
 
   self:
     path: config
 ```
-
-> Replace `<YOUR_GITHUB_USERNAME>` with the owner of the `zmk-caps-word-ru` repo (or change the remote to match where you host it).
 
 Commit and push.
 
